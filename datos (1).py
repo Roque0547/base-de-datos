@@ -9,8 +9,11 @@ def escribir():
     apellido = caja2.get()
     dni = caja3.get()
     colorfavorito = caja4.get()
+    bd = sqlite3.connect('datos1.bd')
+    cur = bd.cursor()
+    cur.execute('INSERT OR IGNORE INTO Datos(Nombre, Apellido, DNI, ColorFavorito) VALUES ("roque", "portillo", "13246574", "verde");')
     print(nombre, apellido, dni, colorfavorito)
-
+    bd.commit()
 #def leer():
 
     
@@ -41,7 +44,7 @@ caja4.pack()
 
    
 #DESPLEGABLE
-lista=["Python", "C", "C++", "Java"]
+lista=["1", "2", "3", "4"]
 combo = ttk.Combobox(values=lista)
 combo.place(x=115, y=185)
 
