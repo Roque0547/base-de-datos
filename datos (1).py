@@ -11,7 +11,7 @@ def escribir():
     colorfavorito = caja4.get()
     bd = sqlite3.connect('datos1.bd')
     cur = bd.cursor()
-    cur.execute('INSERT OR IGNORE INTO Datos(Nombre, Apellido, DNI, ColorFavorito) VALUES ("roque", "portillo", "13246574", "verde");')
+    cur.execute('INSERT OR IGNORE INTO Datos(Nombre, Apellido, DNI, ColorFavorito) VALUES ("{}", "{}", "{}", "{}");'.format(nombre, apellido, dni, colorfavorito))
     print(nombre, apellido, dni, colorfavorito)
     bd.commit()
 #def leer():
